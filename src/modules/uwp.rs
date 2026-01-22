@@ -11,16 +11,14 @@ pub struct UwpApp {
 
 /// Получает список всех UWP приложений (установленных и доступных)
 pub fn get_uwp_apps() -> io::Result<Vec<UwpApp>> {
-    let output = Command::new("powershell")
+    let _output = Command::new("powershell")
         .args(&[
             "-Command",
             "Get-AppxPackage | Select-Object Name, PackageFullName | ConvertTo-Json"
         ])
         .output()?;
-
-    let stdout = String::from_utf8_lossy(&output.stdout);
     
-    // Простой парсинг вывода
+    // Простой парсинг вывода - можно расширить
     let mut apps = Vec::new();
     
     // Добавляем некоторые стандартные UWP приложения
