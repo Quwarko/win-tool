@@ -1,6 +1,6 @@
 use std::io;
 use winreg::enums::*;
-use winreg::RegKey;
+use winreg::{RegKey, HKEY};
 
 /// Читает значение из реестра
 pub fn read_registry_value(hkey: HKEY, path: &str, name: &str) -> io::Result<String> {
