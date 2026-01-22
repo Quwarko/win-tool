@@ -89,7 +89,7 @@ pub fn remove_shortcut_suffix(enable: bool) -> io::Result<()> {
     let (key, _) = hkcu.create_subkey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer")?;
     
     if enable {
-        key.set_value("link", &[0u8; 0])?; // Пустое значение
+        key.set_value("link", &"")?; // Пустая строка
     } else {
         let _ = key.delete_value("link"); // Удаляем ключ для значения по умолчанию
     }
