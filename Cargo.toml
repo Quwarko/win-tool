@@ -1,0 +1,21 @@
+[package]
+name = "win-tool"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name"]
+description = "CLI-утилита для настройки Windows 11"
+
+[dependencies]
+ratatui = "0.26"
+crossterm = "0.27"
+winreg = "0.52"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+tokio = { version = "1.35", features = ["full"] }
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
