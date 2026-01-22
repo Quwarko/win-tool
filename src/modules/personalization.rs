@@ -1,5 +1,4 @@
 use std::io;
-use std::process::Command;
 use winreg::enums::*;
 use winreg::RegKey;
 
