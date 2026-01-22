@@ -1,6 +1,6 @@
 use std::io;
 use crossterm::{
-    event::{self, Event, KeyCode, KeyEvent},
+    event::{self, Event, KeyCode},
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
@@ -17,7 +17,7 @@ mod modules;
 mod tui;
 mod utils;
 
-use modules::{explorer, packages, personalization, system, uwp};
+use modules::explorer;
 use utils::admin;
 
 #[derive(Debug, Clone, PartialEq)]
